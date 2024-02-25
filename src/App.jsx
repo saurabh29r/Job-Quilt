@@ -1,13 +1,18 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Components/Home/Home";
+import Login from "./Components/Login/Login";
 
 function App() {
   return (
     <>
-      <div>
-        <h1> Job-Quilt </h1>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

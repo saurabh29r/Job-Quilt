@@ -1,0 +1,40 @@
+body{
+    background-color: black;
+    height: 100%;
+}
+
+.label-element{
+    color: #ffffff;
+}
+
+.form-container{
+    background-color: #272727;
+   margin: 45px;
+   border-radius: 10px;
+}
+
+.input-class{
+
+    border: solid 1px #64748b;
+    padding: 5px;
+    
+    height: 45px;
+    width: 280px;
+    background-color: #272727;
+    color: #64748b;
+    outline: none;
+    border-radius: 5px;
+
+}
+
+.label-element{
+    color: white;
+    display: block;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.error-msg-api{
+    color: red;
+    
+}
