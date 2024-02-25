@@ -1,0 +1,60 @@
+.main-logo{
+    height: 90px;
+    width: 130px;
+    border-radius: 5px;
+}
+
+
+
+.bg-container{
+    background-color: #272727;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    position: sticky;
+    top: 0;
+   z-index: 1000;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a{
+
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+li{
+    margin-right: 60px; 
+
+
+    
+}
+
+a{
+    list-style: none;
+    text-decoration: none !important;
+    font-weight: bold;
+    display: block;
+    padding: 10px 20px !important ;
+    color: #ffffff !important;
+}
+
+.active{
+    background-color:cadetblue;
+}
