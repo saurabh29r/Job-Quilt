@@ -1,0 +1,16 @@
+.bg-containers{
+    background-image: url('https://res.cloudinary.com/djq9899ge/image/upload/v1708887475/p0jkilb9b4o5ltzhkmys.jpg');
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+   
+   
+}
+
+.main-heading{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  padding-top: 40px;
+  padding-left: 10px;
+}

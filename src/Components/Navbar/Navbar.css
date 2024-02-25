@@ -1,7 +1,8 @@
 .main-logo{
-    height: 90px;
+    min-height: 80px;
     width: 130px;
     border-radius: 5px;
+    padding: 10px;
 }
 
 
