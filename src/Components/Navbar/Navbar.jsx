@@ -17,11 +17,7 @@ function Navbar() {
     <>
       <nav className="bg-container d-none d-lg-flex">
         <Link to="/">
-          <img
-            src="https://res.cloudinary.com/djq9899ge/image/upload/v1708872863/xy7dmdruwkg5dju5bokx.png"
-            alt="main-logo"
-            className="main-logo"
-          />
+          <h1 className="main-heading-logo"> JobQuilt </h1>
         </Link>
         <ul>
           <li>
@@ -31,9 +27,10 @@ function Navbar() {
           <li>
             <NavLink to="/jobs">Jobs</NavLink>
           </li>
+
           <button
             type="button"
-            className="btn btn-secondary m-3"
+            className="btn btn-secondary btnss"
             onClick={onclickLogout}
           >
             Logout
@@ -45,11 +42,9 @@ function Navbar() {
         className="d-lg-none bg-container"
         style={{ backgroundColor: "black" }}
       >
-        <img
-          src="https://res.cloudinary.com/djq9899ge/image/upload/v1708893915/jt3kn3j2ldhgpxhkpql9.png"
-          alt="mobile-view-imgs"
-          className="main-logos"
-        />
+        <Link to="/">
+          <h1 className=" mob-logo"> JobQuilt </h1>
+        </Link>
         <ul className="mob-ul">
           <li className="logos">
             <Link to="/" className="mob-anchor">

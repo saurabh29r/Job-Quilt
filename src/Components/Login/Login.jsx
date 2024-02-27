@@ -59,6 +59,7 @@ function Login() {
             <Form>
               <div className="logo-heading text-center mb-5">
                 <h1> JobQuilt </h1>
+                <p className="logo-para"> Find a job which suits you.</p>
               </div>
               <div>
                 <label htmlFor="users" className="label-element">
@@ -95,7 +96,7 @@ function Login() {
               <div>
                 <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn btn-primary btnss"
                   onClick={handleSubmit}
                 >
                   Submit

@@ -17,11 +17,13 @@
 
 
 .bg-container{
-    background-color: #272727;
+    background-image: linear-gradient(0deg, #0730fa,rgba(0, 0, 0, 0.292), transparent);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    background-color: black;
+    width: 100%;
+    overflow-x: hidden;
 
 }
 
@@ -73,7 +75,7 @@ a{
 }
 
 .logos{
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .mob-anchor{
@@ -87,4 +89,28 @@ a{
 .extra{
     padding-top: 15px;
     cursor: pointer;
+}
+
+
+.mob-logo{
+    font-size: 25px;
+    background: linear-gradient(to right, #cf9012df 0%, #cf12bf 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.main-heading-logo{
+    background: linear-gradient(to right, #cf9012df 0%, #cf12bf 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.btnss{
+    background-color: darkblue;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-right: 10px;
 }
