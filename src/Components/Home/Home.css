@@ -4,6 +4,7 @@
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
+    width: 100%;
    
    
    
@@ -13,4 +14,41 @@
     font-family:Georgia, 'Times New Roman', Times, serif;
   padding-top: 40px;
   padding-left: 10px;
+}
+
+.home-para{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  padding-top: 40px;
+  padding-left: 10px;
+
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background: hsl(81, 75%, 50%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background: hsl(200, 100%, 50%);
+    border-radius: 5px;
+   
+
+}
+
+.btns{
+    background-color: cadetblue;
+    color: whitesmoke;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.btns:hover{
+    background-color: cornflowerblue;
 }

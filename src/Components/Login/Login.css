@@ -1,6 +1,31 @@
 body{
     background-color: black;
     height: 100%;
+   
+}
+
+.main-content{
+    background-image: radial-gradient(circle at bottom right, #1287cfdf, #cf127a, 20%, #000000 50%);
+     
+  
+   width: auto;
+    height:100vh;
+
+    
+  
+
+}
+
+
+
+
+.logo-heading{
+    background: whitesmoke;
+   background: linear-gradient(to right, #12cfc6df 0%, #cf127a 100%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-family: monospace;
+   font-weight: 900 !important;
 }
 
 .label-element{
@@ -8,30 +33,38 @@ body{
 }
 
 .form-container{
-    background-color: #272727;
+   background-image: linear-gradient(-100deg, #0730fa, transparent);
    margin: 45px;
    border-radius: 10px;
+  
+}
+
+.form-container:hover{
+    border: solid 2px palegreen;
 }
 
 .input-class{
 
     border: solid 1px #64748b;
     padding: 5px;
-    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 45px;
     width: 280px;
-    background-color: #272727;
-    color: #64748b;
+    background-color: whitesmoke;
+    color: #222222;
     outline: none;
     border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
 
 }
 
 .label-element{
     color: white;
     display: block;
-    font-weight: 500;
+  
     margin-left: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .error-msg-api{

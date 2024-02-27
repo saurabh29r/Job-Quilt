@@ -5,6 +5,15 @@
     padding: 10px;
 }
 
+.main-logos{
+    height: 130px;
+    width: 140px;
+    border-radius: 5px;
+  
+
+}
+
+
 
 
 .bg-container{
@@ -12,6 +21,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+
 }
 
 
@@ -39,6 +50,7 @@ nav ul li a{
     margin: 0 0.5rem;
     border-radius: 5px;
     margin-top: 10px;
+    
 }
 li{
     margin-right: 60px; 
@@ -58,4 +70,21 @@ a{
 
 .active{
     background-color:cadetblue;
+}
+
+.logos{
+    font-size: 30px;
+}
+
+.mob-anchor{
+    list-style: none;
+    text-decoration: none !important;
+    padding: 0px !important;
+   
+
+}
+
+.extra{
+    padding-top: 15px;
+    cursor: pointer;
 }

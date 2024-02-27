@@ -51,18 +51,14 @@ function Login() {
   }, [navigate]);
 
   return (
-    <Container>
+    <Container className="main-content" fluid>
       {/* this fluid is used a special class */}
       <Row>
-        <Col className="d-flex justify-content-center  align-items-center pt-5">
+        <Col className="d-flex justify-content-center  align-items-center pt-5 ">
           <div className="form-container p-3">
             <Form>
-              <div className="text-center">
-                <img
-                  src="https://res.cloudinary.com/djq9899ge/image/upload/v1708872863/xy7dmdruwkg5dju5bokx.png"
-                  alt="form-img"
-                  className="form-image"
-                />
+              <div className="logo-heading text-center mb-5">
+                <h1> JobQuilt </h1>
               </div>
               <div>
                 <label htmlFor="users" className="label-element">
@@ -72,7 +68,7 @@ function Login() {
                 <input
                   type="text"
                   id="users"
-                  placeholder="username:rahul"
+                  placeholder="Username:rahul"
                   className=" input-class"
                   name="users"
                   value={username}
@@ -88,7 +84,7 @@ function Login() {
                 <input
                   type="password"
                   id="pass"
-                  placeholder="password:rahul@2021"
+                  placeholder="Password:rahul@2021"
                   className=" input-class"
                   name="pass"
                   value={password}
