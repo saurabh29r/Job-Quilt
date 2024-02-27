@@ -4,15 +4,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import Jobs from "./Components/Jobcard/Jobs";
+import Protected from "./Components/Protected/Protected";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Protected Comp={Home} />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/jobs" element={<Protected Comp={Jobs} />} />
         </Routes>
       </BrowserRouter>
     </>
