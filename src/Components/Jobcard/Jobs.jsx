@@ -3,6 +3,8 @@ import Navbar from "../Navbar/Navbar";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import "./Jobcard.css";
+import { CiLocationOn } from "react-icons/ci";
+import { MdWorkOutline } from "react-icons/md";
 // import LazyLoad from "react-lazy-load";
 // import { FaSearch } from "react-icons/fa";
 // import { CirclesWithBar } from "react-loader-spinner";
@@ -72,18 +74,27 @@ function Jobs() {
                   <div key={index.id} className="job-container">
                     <div className="conatines">
                       <h3>{title}</h3>
-                      <div>
+                      <div className="image-rating-con">
                         <img
                           src={company_logo_url}
                           alt="company-url"
                           className="company-img"
                         />
+                        <p>{`⭐`.repeat(rating)}</p>
+                      </div>
+                      <div className="location-job-pacakge-container">
+                      <div className="location-map-container">
+                        <CiLocationOn />
+                        <p className="locations">{location}</p>
+                      </div>
+                      <div className="work-jobtype">
+                        <MdWorkOutline />
+                        <p className="job-type">{employment_type}</p>
                       </div>
 
-                      <p>{location}</p>
-                      <p>{employment_type}</p>
-                      <p>{`⭐.repeat( ${rating})`}</p>
-                      <p> {package_per_annum}</p>
+                      <p className="package"> {package_per_annum}</p>
+                      </div>
+                      <hr className="horizontal-line"/>
                       <p>{job_description}</p>
                     </div>
                   </div>

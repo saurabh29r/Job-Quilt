@@ -23,6 +23,8 @@
    box-shadow: -15px 17px 17px rgba(10,10,10,.25);
    margin: 20px;
    padding: 20px;
+   /* width: 70%;
+   margin-left: 30%; */
 
 
 
@@ -34,4 +36,53 @@
 .company-img{
     height: 45px;
     width: 45px;
+    margin-right: 5px;
+}
+
+
+
+.image-rating-con{
+    display: flex;
+    align-items: center;
+}
+.locations{
+    
+    margin-top: 13px;
+    margin-left: 5px;
+}
+
+.location-map-container{
+  
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+}
+
+
+.work-jobtype{
+    display: flex;
+    align-items: center;
+}
+
+.job-type{
+    margin-top: 13px;
+    margin-left: 5px;
+
+}
+.package{
+    margin-top: 13px;
+    margin-left: 5px;
+
+}
+
+.location-job-pacakge-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.horizontal-line{
+   width: 100%;
+   border-top: 3px solid rgba(255,255,255,0.7);
 }
