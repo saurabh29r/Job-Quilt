@@ -56,7 +56,35 @@ function Jobs() {
       <Container fluid>
         <Row>
           <Col>
-            <div> Saurabh</div>
+            <div className="main-bg-container">
+              {jobs.map((item, index) => {
+                const {
+                  company_logo_url,
+                  employment_type,
+                  job_description,
+                  location,
+                  package_per_annum,
+                  rating,
+                  title,
+                } = item;
+
+                return (
+                  <div key={index.id} className="job-container">
+                    <div className="conatines">
+                      <h3>{title}</h3>
+                      <p>{job_description}</p>
+                      <p>{location}</p>
+                      <p>{employment_type}</p>
+                      <p>{`⭐ ${rating}`}</p>
+                      <p> {package_per_annum}</p>
+                      <div>
+                        <img src={company_logo_url} alt="company-url" />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </Col>
         </Row>
       </Container>
