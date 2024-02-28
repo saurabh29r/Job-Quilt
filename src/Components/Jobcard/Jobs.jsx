@@ -72,14 +72,19 @@ function Jobs() {
                   <div key={index.id} className="job-container">
                     <div className="conatines">
                       <h3>{title}</h3>
-                      <p>{job_description}</p>
+                      <div>
+                        <img
+                          src={company_logo_url}
+                          alt="company-url"
+                          className="company-img"
+                        />
+                      </div>
+
                       <p>{location}</p>
                       <p>{employment_type}</p>
-                      <p>{`⭐ ${rating}`}</p>
+                      <p>{`⭐.repeat( ${rating})`}</p>
                       <p> {package_per_annum}</p>
-                      <div>
-                        <img src={company_logo_url} alt="company-url" />
-                      </div>
+                      <p>{job_description}</p>
                     </div>
                   </div>
                 );

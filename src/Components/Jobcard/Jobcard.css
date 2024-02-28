@@ -1,0 +1,37 @@
+.container{
+    color: yellow;
+    border: solid 10px magenta;
+   
+    
+}
+
+.conatines{
+   /* background-color: transparent;
+   border: solid 10px magenta;
+   margin: 10px;
+   border-radius: 20px;
+   width: 60%; */
+  
+   padding: 0, 20px;
+   background: rgba(255,255,255,0.1);
+   z-index: 10;
+   /* display: flex; */
+   position: relative;
+   border-radius: 20px;
+   border: 2px solid rgba(255,255,255,0.7);
+   backdrop-filter: blur(25px);
+   box-shadow: -15px 17px 17px rgba(10,10,10,.25);
+   margin: 20px;
+   padding: 20px;
+
+
+
+
+
+   
+}
+
+.company-img{
+    height: 45px;
+    width: 45px;
+}
