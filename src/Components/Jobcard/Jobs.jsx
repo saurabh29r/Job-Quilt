@@ -6,13 +6,13 @@ import "./Jobcard.css";
 import { CiLocationOn } from "react-icons/ci";
 import { MdWorkOutline } from "react-icons/md";
 // import LazyLoad from "react-lazy-load";
-// import { FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 // import { CirclesWithBar } from "react-loader-spinner";
 // import { Link } from "react-router-dom";
 
 function Jobs() {
   const [jobs, setJobs] = useState([]);
-  // const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("");
   // const [isLoading, setIsLoading] = useState(true);
 
   const getJob = async () => {
@@ -47,9 +47,9 @@ function Jobs() {
     getJob();
   }, []);
 
-  // const filteredProducts = products.filter((product) =>
-  //   product.title.toLowerCase().includes(search.toLowerCase())
-  // );
+  const filteredJobs = jobs.filter((job) =>
+    job.title.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <>
@@ -58,59 +58,60 @@ function Jobs() {
       <Container fluid>
         <Row>
           <Col>
-          <div className="d-flex">
-            <div className="filter-container">
-              <h2> Type of Employment </h2>
-              <h2> Type of Employment </h2>
-              <h2> Type of Employment </h2>
-              <h2> Type of Employment </h2>
-              <h2> Type of Employment </h2>
+            <div className="d-flex">
+              <div className="filter-container">
+                <div className="input-wrapper">
+                  <FaSearch id="search-icon" />
+                  <input
+                    type="search"
+                    placeholder="Please Enter the keyword"
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="main-bg-container">
+                {filteredJobs.map((item, index) => {
+                  const {
+                    company_logo_url,
+                    employment_type,
+                    job_description,
+                    location,
+                    package_per_annum,
+                    rating,
+                    title,
+                  } = item;
 
+                  return (
+                    <div key={index.id} className="job-container">
+                      <div className="conatines">
+                        <h3>{title}</h3>
+                        <div className="image-rating-con">
+                          <img
+                            src={company_logo_url}
+                            alt="company-url"
+                            className="company-img"
+                          />
+                          <p>{`⭐`.repeat(rating)}</p>
+                        </div>
+                        <div className="location-job-pacakge-container">
+                          <div className="location-map-container">
+                            <CiLocationOn />
+                            <p className="locations">{location}</p>
+                          </div>
+                          <div className="work-jobtype">
+                            <MdWorkOutline />
+                            <p className="job-type">{employment_type}</p>
+                          </div>
 
-            </div>
-            <div className="main-bg-container">
-              {jobs.map((item, index) => {
-                const {
-                  company_logo_url,
-                  employment_type,
-                  job_description,
-                  location,
-                  package_per_annum,
-                  rating,
-                  title,
-                } = item;
-
-                return (
-                  <div key={index.id} className="job-container">
-                    <div className="conatines">
-                      <h3>{title}</h3>
-                      <div className="image-rating-con">
-                        <img
-                          src={company_logo_url}
-                          alt="company-url"
-                          className="company-img"
-                        />
-                        <p>{`⭐`.repeat(rating)}</p>
+                          <p className="package"> {package_per_annum}</p>
+                        </div>
+                        <hr className="horizontal-line" />
+                        <p className="job-description">{job_description}</p>
                       </div>
-                      <div className="location-job-pacakge-container">
-                      <div className="location-map-container">
-                        <CiLocationOn />
-                        <p className="locations">{location}</p>
-                      </div>
-                      <div className="work-jobtype">
-                        <MdWorkOutline />
-                        <p className="job-type">{employment_type}</p>
-                      </div>
-
-                      <p className="package"> {package_per_annum}</p>
-                      </div>
-                      <hr className="horizontal-line"/>
-                      <p className="job-description">{job_description}</p>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
             </div>
           </Col>
         </Row>
