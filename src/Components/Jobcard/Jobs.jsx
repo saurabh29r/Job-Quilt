@@ -58,6 +58,16 @@ function Jobs() {
       <Container fluid>
         <Row>
           <Col>
+          <div className="d-flex">
+            <div className="filter-container">
+              <h2> Type of Employment </h2>
+              <h2> Type of Employment </h2>
+              <h2> Type of Employment </h2>
+              <h2> Type of Employment </h2>
+              <h2> Type of Employment </h2>
+
+
+            </div>
             <div className="main-bg-container">
               {jobs.map((item, index) => {
                 const {
@@ -95,11 +105,12 @@ function Jobs() {
                       <p className="package"> {package_per_annum}</p>
                       </div>
                       <hr className="horizontal-line"/>
-                      <p>{job_description}</p>
+                      <p className="job-description">{job_description}</p>
                     </div>
                   </div>
                 );
               })}
+            </div>
             </div>
           </Col>
         </Row>
