@@ -97,7 +97,7 @@ function Jobs() {
       <Container fluid>
         <Row>
           <Col>
-            <div className="d-flex">
+            <div className=" bgs-container">
               <div className="filter-container">
                 <div className="input-wrapper">
                   <FaSearch id="search-icon" />
@@ -246,7 +246,7 @@ function Jobs() {
                 ) : (
                   filteredJobs.map((job, index) => (
                     <div key={index} className="job-container">
-                      <div className="conatines">
+                      <div className="conatines ">
                         <h3>{job.title}</h3>
                         <div className="image-rating-con">
                           <img
