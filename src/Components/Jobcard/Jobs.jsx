@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Button } from "react-bootstrap";
 import Navbar from "../Navbar/Navbar";
 import Cookies from "js-cookie";
 import { FaSearch } from "react-icons/fa";
@@ -11,12 +11,8 @@ function Jobs() {
   const [jobs, setJobs] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [search, setSearch] = useState("");
-  const [filters, setFilters] = useState({
-    fullTime: false,
-    partTime: false,
-    internship: false,
-    freelance: false,
-  });
+  const [selectedJobType, setSelectedJobType] = useState("");
+  const [selectedSalaryFilter, setSelectedSalaryFilter] = useState("");
 
   const getJobs = async () => {
     try {
@@ -43,18 +39,18 @@ function Jobs() {
 
   useEffect(() => {
     applyFilters();
-  }, [search, filters]);
-
-  const handleCheckboxChange = (event) => {
-    const { name, checked } = event.target;
-    setFilters({
-      ...filters,
-      [name]: checked,
-    });
-  };
+  }, [search, selectedJobType, selectedSalaryFilter]);
 
   const handleSearchChange = (event) => {
     setSearch(event.target.value);
+  };
+
+  const handleJobTypeChange = (event) => {
+    setSelectedJobType(event.target.value);
+  };
+
+  const handleSalaryFilterChange = (event) => {
+    setSelectedSalaryFilter(event.target.value);
   };
 
   const applyFilters = () => {
@@ -62,16 +58,30 @@ function Jobs() {
       const titleMatches = job.title
         .toLowerCase()
         .includes(search.toLowerCase());
-      const employmentTypeMatches =
-        (!filters.fullTime || job.employment_type === "Full Time") &&
-        (!filters.partTime || job.employment_type === "Part Time") &&
-        (!filters.internship || job.employment_type === "Internship") &&
-        (!filters.freelance || job.employment_type === "Freelance");
+      const jobTypeMatches =
+        !selectedJobType || job.employment_type === selectedJobType;
+      const salaryMatches =
+        !selectedSalaryFilter ||
+        (selectedSalaryFilter === "10" &&
+          parseFloat(job.package_per_annum) >= 10) ||
+        (selectedSalaryFilter === "20" &&
+          parseFloat(job.package_per_annum) >= 20) ||
+        (selectedSalaryFilter === "30" &&
+          parseFloat(job.package_per_annum) >= 30) ||
+        (selectedSalaryFilter === "40" &&
+          parseFloat(job.package_per_annum) >= 40);
 
-      return titleMatches && employmentTypeMatches;
+      return titleMatches && jobTypeMatches && salaryMatches;
     });
 
     setFilteredJobs(updatedFilteredJobs);
+  };
+
+  const clearFilters = () => {
+    setSearch("");
+    setSelectedJobType("");
+    setSelectedSalaryFilter("");
+    setFilteredJobs(jobs);
   };
 
   return (
@@ -98,44 +108,48 @@ function Jobs() {
                   <br />
                   <div>
                     <input
-                      type="checkbox"
+                      type="radio"
                       id="fullTime"
-                      name="fullTime"
-                      checked={filters.fullTime}
-                      onChange={handleCheckboxChange}
+                      name="jobType"
+                      value="Full Time"
+                      checked={selectedJobType === "Full Time"}
+                      onChange={handleJobTypeChange}
                     />
                     <label htmlFor="fullTime" className="ml-2">
                       Full Time
                     </label>
                     <br />
                     <input
-                      type="checkbox"
+                      type="radio"
                       id="partTime"
-                      name="partTime"
-                      checked={filters.partTime}
-                      onChange={handleCheckboxChange}
+                      name="jobType"
+                      value="Part Time"
+                      checked={selectedJobType === "Part Time"}
+                      onChange={handleJobTypeChange}
                     />
                     <label htmlFor="partTime" className="ml-2">
                       Part Time
                     </label>
                     <br />
                     <input
-                      type="checkbox"
+                      type="radio"
                       id="internship"
-                      name="internship"
-                      checked={filters.internship}
-                      onChange={handleCheckboxChange}
+                      name="jobType"
+                      value="Internship"
+                      checked={selectedJobType === "Internship"}
+                      onChange={handleJobTypeChange}
                     />
                     <label htmlFor="internship" className="ml-2">
                       Internship
                     </label>
                     <br />
                     <input
-                      type="checkbox"
+                      type="radio"
                       id="freelance"
-                      name="freelance"
-                      checked={filters.freelance}
-                      onChange={handleCheckboxChange}
+                      name="jobType"
+                      value="Freelance"
+                      checked={selectedJobType === "Freelance"}
+                      onChange={handleJobTypeChange}
                     />
                     <label htmlFor="freelance" className="ml-2">
                       Freelance
@@ -144,28 +158,62 @@ function Jobs() {
                 </div>
                 <hr className="horizontal-lines" />
                 <div className="ml-3">
-                  <h6> Type of Employment</h6>
+                  <h6> Salary</h6>
                   <div>
-                    <input type="radio" id="ten" />
+                    <input
+                      type="radio"
+                      id="ten"
+                      name="salaryFilter"
+                      value="10"
+                      checked={selectedSalaryFilter === "10"}
+                      onChange={handleSalaryFilterChange}
+                    />
                     <label htmlFor="ten" className="ml-2">
                       10LPA and Above
                     </label>
                     <br />
-                    <input type="radio" id="twenty" />
+                    <input
+                      type="radio"
+                      id="twenty"
+                      name="salaryFilter"
+                      value="20"
+                      checked={selectedSalaryFilter === "20"}
+                      onChange={handleSalaryFilterChange}
+                    />
                     <label htmlFor="twenty" className="ml-2">
                       20LPA and Above
                     </label>
                     <br />
-                    <input type="radio" id="Thirty" />
-                    <label htmlFor="Thirty" className="ml-2">
+                    <input
+                      type="radio"
+                      id="thirty"
+                      name="salaryFilter"
+                      value="30"
+                      checked={selectedSalaryFilter === "30"}
+                      onChange={handleSalaryFilterChange}
+                    />
+                    <label htmlFor="thirty" className="ml-2">
                       30LPA and Above
                     </label>
                     <br />
-                    <input type="radio" id="Fourty" />
-                    <label htmlFor="Fourty" className="ml-2">
+                    <input
+                      type="radio"
+                      id="forty"
+                      name="salaryFilter"
+                      value="40"
+                      checked={selectedSalaryFilter === "40"}
+                      onChange={handleSalaryFilterChange}
+                    />
+                    <label htmlFor="forty" className="ml-2">
                       40LPA and Above
                     </label>
                   </div>
+                </div>
+                <hr className="horizontal-lines" />
+                <div className="ml-3">
+                  <Button variant="secondary" onClick={clearFilters} className="clearbtns">
+                    Clear Filters
+                  </Button>
                 </div>
               </div>
               <div className="main-bg-container">
