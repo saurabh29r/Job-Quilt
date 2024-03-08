@@ -236,7 +236,7 @@ function Jobs() {
                   <div className="no-job-found-container">
                     <img
                       src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
-                      alt="no-jobs-found"
+                      alt="no-jobs-found" className="no-job-found-image"
                     />
 
                     <p className="no-job-found-errormsg">
