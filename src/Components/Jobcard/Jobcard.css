@@ -101,7 +101,7 @@
   
   }
   
-  input{
+  .search-input{
     background-color: transparent;
     border: none;
     height: 100%;
@@ -111,7 +111,7 @@
     color: whitesmoke
   }
   
-  input:focus{
+  .search-input:focus{
     outline: none;
   }
   
@@ -119,3 +119,9 @@
   #search-icon{
     color: palevioletred;
   }
+
+  .horizontal-lines{
+    width: 90%;
+    margin-left: 15px;
+    border-top: 3px solid lightblue;
+ }
