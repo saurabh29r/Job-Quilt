@@ -13,6 +13,7 @@ function Jobs() {
   const [search, setSearch] = useState("");
   const [selectedJobType, setSelectedJobType] = useState("");
   const [selectedSalaryFilter, setSelectedSalaryFilter] = useState("");
+  const [filterApplied, setFilterApplied] = useState(false);
 
   const getJobs = async () => {
     try {
@@ -75,6 +76,7 @@ function Jobs() {
     });
 
     setFilteredJobs(updatedFilteredJobs);
+    setFilterApplied(true);
   };
 
   const clearFilters = () => {
@@ -82,6 +84,7 @@ function Jobs() {
     setSelectedJobType("");
     setSelectedSalaryFilter("");
     setFilteredJobs(jobs);
+    setFilterApplied(false);
   };
 
   return (
@@ -211,40 +214,57 @@ function Jobs() {
                 </div>
                 <hr className="horizontal-lines" />
                 <div className="ml-3">
-                  <Button variant="secondary" onClick={clearFilters} className="clearbtns">
+                  <Button
+                    variant="secondary"
+                    className="clearbtns"
+                    onClick={clearFilters}
+                  >
                     Clear Filters
                   </Button>
                 </div>
               </div>
               <div className="main-bg-container">
-                {filteredJobs.map((job, index) => (
-                  <div key={index} className="job-container">
-                    <div className="conatines">
-                      <h3>{job.title}</h3>
-                      <div className="image-rating-con">
-                        <img
-                          src={job.company_logo_url}
-                          alt="company-url"
-                          className="company-img"
-                        />
-                        <p>{`⭐`.repeat(job.rating)}</p>
-                      </div>
-                      <div className="location-job-pacakge-container">
-                        <div className="location-map-container">
-                          <CiLocationOn />
-                          <p className="locations">{job.location}</p>
-                        </div>
-                        <div className="work-jobtype">
-                          <MdWorkOutline />
-                          <p className="job-type">{job.employment_type}</p>
-                        </div>
-                        <p className="package"> {job.package_per_annum}</p>
-                      </div>
-                      <hr className="horizontal-line" />
-                      <p className="job-description">{job.job_description}</p>
-                    </div>
+                {filterApplied && filteredJobs.length === 0 ? (
+                  <div className="no-job-found-container">
+                    <img
+                      src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
+                      alt="no-jobs-found"
+                    />
+
+                    <p className="no-job-found-errormsg">
+                      No jobs found matching the selected criteria.
+                    </p>
                   </div>
-                ))}
+                ) : (
+                  filteredJobs.map((job, index) => (
+                    <div key={index} className="job-container">
+                      <div className="conatines">
+                        <h3>{job.title}</h3>
+                        <div className="image-rating-con">
+                          <img
+                            src={job.company_logo_url}
+                            alt="company-url"
+                            className="company-img"
+                          />
+                          <p>{`⭐`.repeat(job.rating)}</p>
+                        </div>
+                        <div className="location-job-pacakge-container">
+                          <div className="location-map-container">
+                            <CiLocationOn />
+                            <p className="locations">{job.location}</p>
+                          </div>
+                          <div className="work-jobtype">
+                            <MdWorkOutline />
+                            <p className="job-type">{job.employment_type}</p>
+                          </div>
+                          <p className="package"> {job.package_per_annum}</p>
+                        </div>
+                        <hr className="horizontal-line" />
+                        <p className="job-description">{job.job_description}</p>
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           </Col>
