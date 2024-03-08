@@ -6,6 +6,7 @@ import { FaSearch } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { MdWorkOutline } from "react-icons/md";
 import "./Jobcard.css";
+import { DNA } from "react-loader-spinner";
 
 function Jobs() {
   const [jobs, setJobs] = useState([]);
@@ -14,6 +15,7 @@ function Jobs() {
   const [selectedJobType, setSelectedJobType] = useState("");
   const [selectedSalaryFilter, setSelectedSalaryFilter] = useState("");
   const [filterApplied, setFilterApplied] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const getJobs = async () => {
     try {
@@ -29,8 +31,10 @@ function Jobs() {
       const data = await response.json();
       setJobs(data.jobs);
       setFilteredJobs(data.jobs);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
+      setLoading(false);
     }
   };
 
@@ -224,7 +228,11 @@ function Jobs() {
                 </div>
               </div>
               <div className="main-bg-container">
-                {filterApplied && filteredJobs.length === 0 ? (
+                {loading ? (
+                  <div className="loader-container">
+                    <DNA color="#007bff" height={180} width={180} />
+                  </div>
+                ) : filterApplied && filteredJobs.length === 0 ? (
                   <div className="no-job-found-container">
                     <img
                       src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
