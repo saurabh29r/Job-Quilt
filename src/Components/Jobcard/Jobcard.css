@@ -147,9 +147,16 @@
  }
 
  .loader-container{
-    margin-top: 120px;
+    
+    position: fixed;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%,-50%);
+   
+   
     
  }
+
 
 
  @media only screen and (max-width: 768px) {
@@ -173,5 +180,25 @@
     width: 245px;
     margin-left: 120px;
 }
+
+.loader-container{
+    margin-top: 270px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+   
+   
     
  }
+    
+ }
+
+
+.btsns{
+    height: 45px;
+    width: fit-content;
+    border-radius: 10px 15px 5px 15px;
+    background-color: rgb(186, 29, 147);
+    border-style: none;
+}

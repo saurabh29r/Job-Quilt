@@ -5,6 +5,7 @@ import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import Jobs from "./Components/Jobcard/Jobs";
 import Protected from "./Components/Protected/Protected";
+import Jobdetailspage from "./Components/Jobdetailspage/Jobdetailspage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Protected Comp={Home} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/jobs" element={<Protected Comp={Jobs} />} />
+          <Route path="/Jobs/:id" element={<Jobdetailspage />} />
         </Routes>
       </BrowserRouter>
     </>

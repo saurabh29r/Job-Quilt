@@ -7,6 +7,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { MdWorkOutline } from "react-icons/md";
 import "./Jobcard.css";
 import { DNA } from "react-loader-spinner";
+import { Link } from "react-router-dom";
 
 function Jobs() {
   const [jobs, setJobs] = useState([]);
@@ -112,7 +113,7 @@ function Jobs() {
                 <hr className="horizontal-lines" />
                 <div className="ml-3">
                   <h6> Type of Employment</h6>
-                  <br />
+
                   <div>
                     <input
                       type="radio"
@@ -230,13 +231,14 @@ function Jobs() {
               <div className="main-bg-container">
                 {loading ? (
                   <div className="loader-container">
-                    <DNA color="#007bff" height={180} width={180} />
+                    <DNA height={180} width={180}  />
                   </div>
                 ) : filterApplied && filteredJobs.length === 0 ? (
                   <div className="no-job-found-container">
                     <img
                       src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
-                      alt="no-jobs-found" className="no-job-found-image"
+                      alt="no-jobs-found"
+                      className="no-job-found-image"
                     />
 
                     <p className="no-job-found-errormsg">
@@ -269,6 +271,9 @@ function Jobs() {
                         </div>
                         <hr className="horizontal-line" />
                         <p className="job-description">{job.job_description}</p>
+                        <button className="btsns">
+                          <Link to={`/jobs/${job.id}`}> Apply now </Link>
+                        </button>
                       </div>
                     </div>
                   ))
