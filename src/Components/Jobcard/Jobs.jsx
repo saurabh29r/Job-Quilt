@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import Navbar from "../Navbar/Navbar";
 import Cookies from "js-cookie";
@@ -43,23 +43,7 @@ function Jobs() {
     getJobs();
   }, []);
 
-  useEffect(() => {
-    applyFilters();
-  }, [search, selectedJobType, selectedSalaryFilter]);
-
-  const handleSearchChange = (event) => {
-    setSearch(event.target.value);
-  };
-
-  const handleJobTypeChange = (event) => {
-    setSelectedJobType(event.target.value);
-  };
-
-  const handleSalaryFilterChange = (event) => {
-    setSelectedSalaryFilter(event.target.value);
-  };
-
-  const applyFilters = () => {
+  const applyFilters = useCallback(() => {
     let updatedFilteredJobs = jobs.filter((job) => {
       const titleMatches = job.title
         .toLowerCase()
@@ -82,6 +66,22 @@ function Jobs() {
 
     setFilteredJobs(updatedFilteredJobs);
     setFilterApplied(true);
+  }, [jobs, search, selectedJobType, selectedSalaryFilter]);
+
+  useEffect(() => {
+    applyFilters();
+  }, [applyFilters]);
+
+  const handleSearchChange = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const handleJobTypeChange = (event) => {
+    setSelectedJobType(event.target.value);
+  };
+
+  const handleSalaryFilterChange = (event) => {
+    setSelectedSalaryFilter(event.target.value);
   };
 
   const clearFilters = () => {
@@ -231,7 +231,7 @@ function Jobs() {
               <div className="main-bg-container">
                 {loading ? (
                   <div className="loader-container">
-                    <DNA height={180} width={180}  />
+                    <DNA height={180} width={180} />
                   </div>
                 ) : filterApplied && filteredJobs.length === 0 ? (
                   <div className="no-job-found-container">
