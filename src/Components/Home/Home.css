@@ -42,7 +42,7 @@
 }
 
 .btns{
-    background-color: cadetblue;
+    background-color:rgb(186, 29, 147);
     color: whitesmoke;
     border-radius: 5px;
     font-weight: bold;
@@ -50,6 +50,3 @@
 
 }
 
-.btns:hover{
-    background-color: cornflowerblue;
-}
