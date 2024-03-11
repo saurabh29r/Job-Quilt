@@ -79,3 +79,32 @@ Start the server
   npm run dev
 ```
 
+#Login-page-view 
+
+
+![loginpageview](https://github.com/saurabh29r/Job-Quilt/assets/48233777/14b076be-fbd0-4b7b-9b07-e00d83186c6c)
+
+#Login-page-success-view-with-JWT-token-console
+
+
+![loginsuccessview](https://github.com/saurabh29r/Job-Quilt/assets/48233777/e7b6c22d-7c70-4447-8e55-8e6a52184875)
+
+#Home page View
+
+![homepageviewpng](https://github.com/saurabh29r/Job-Quilt/assets/48233777/8ea78f15-b8d8-4b2c-b2da-330c35b1c66f)
+
+#Job-page-view
+![jobpageview](https://github.com/saurabh29r/Job-Quilt/assets/48233777/306ff2d1-733a-4bb6-bff5-7fe14001454f)
+
+#Job-Detail-page-view
+![job-detailpageview](https://github.com/saurabh29r/Job-Quilt/assets/48233777/6ca72c26-66ee-47bf-9753-d4d18b6d34e8)
+
+#Mobile-view
+![mobileview](https://github.com/saurabh29r/Job-Quilt/assets/48233777/5fd96368-3069-491c-894d-d32b0832abf5)
+
+#mobile-view-2
+![mobileview2](https://github.com/saurabh29r/Job-Quilt/assets/48233777/7eb16254-5d9b-4993-b58b-73311299df1f)
+
+#mobile-view-3
+![mobileview3](https://github.com/saurabh29r/Job-Quilt/assets/48233777/6e5d614b-739f-4d57-a866-ebfc33b76797)
+
