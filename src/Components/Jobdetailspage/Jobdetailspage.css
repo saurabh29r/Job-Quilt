@@ -1,5 +1,53 @@
 .apply_now{
     color: greenyellow !important;
-   margin-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+ 
+   
+
+}
+.vistist{
+    color: greenyellow !important;
+}
+.extra{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: auto;
+    
+    
+}
 
 
+.visit-section{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.visit-sec{
+    display: flex;
+  align-items: center;
+  font-weight: 600;
+  
+}
+
+.skill-image{
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+}
+
+.skill{
+    display: flex;
+  align-items: center;
+  margin: 10px;
+  justify-content: space-around
+}
+
+.skills-container{
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;}

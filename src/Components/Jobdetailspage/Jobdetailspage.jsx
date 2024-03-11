@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Jobdetailspage.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 import { CiLocationOn } from "react-icons/ci";
 import { MdWorkOutline } from "react-icons/md";
 import Navbar from "../Navbar/Navbar";
-
+import { BiLinkExternal } from "react-icons/bi";
 function Jobdetailspage() {
   const [jobDetails, setJobDetails] = useState({});
   const params = useParams();
@@ -39,7 +39,7 @@ function Jobdetailspage() {
   return (
     <>
       <Navbar />
-      <div className="conatines">
+      <div className="conatines extra">
         <h3>{jobDetails.title}</h3>
         <div className="image-rating-con">
           <img
@@ -61,29 +61,37 @@ function Jobdetailspage() {
           <p className="package"> {jobDetails.package_per_annum}</p>
         </div>
         <hr className="horizontal-line" />
-        <div className="d-flex justify-content-between">
+        <div className="visit-section">
           <h5> Job Description: </h5>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={jobDetails.company_website_url}
-            className="apply_now"
-          >
-            Apply_Here
-          </a>
+          <div className="visit-sec">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={jobDetails.company_website_url}
+              className="apply_now"
+            >
+              Apply_Here
+            </a>
+            <BiLinkExternal className="vistist" />
+          </div>
         </div>
         <p className="job-description">{jobDetails.job_description}</p>
 
-        {/* here the code is bit changed  */}
         <div>
           <h3>Skills</h3>
-          {jobDetails.skills &&
-            jobDetails.skills.map((skill, index) => (
-              <div key={index} className="d-flex">
-                <img src={skill.image_url} alt={skill.name} />
-                <p>{skill.name}</p>
-              </div>
-            ))}
+          <div className="skills-container">
+            {jobDetails.skills &&
+              jobDetails.skills.map((skill, index) => (
+                <li key={index} className="skill">
+                  <img
+                    src={skill.image_url}
+                    alt={skill.name}
+                    className="skill-image"
+                  />
+                  <p className="pt-2">{skill.name}</p>
+                </li>
+              ))}
+          </div>
         </div>
         <div>
           <h3>Life at Company</h3>
