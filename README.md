@@ -7,7 +7,7 @@ In This Project I have build a Modern job portal.
 
 ## Tech Stack
 
-**Frontend:** React, Bootstrap, js-cookies,React-icons,React-tostify,React-router v-6,react-lazy-laod.
+**Frontend:** React, Bootstrap, js-cookies,React-icons,React-router v-6,react-lazy-laod.
 
 **Backend:** Nodejs, npm.
 
