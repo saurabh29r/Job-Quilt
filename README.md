@@ -1,7 +1,7 @@
 
 # Job-Quilt A job platform for developers
 
-In This Project I have builed a Morder job portal.
+In This Project I have build a Modern job portal.
 
 
 
@@ -32,8 +32,8 @@ In This Project I have builed a Morder job portal.
 ##Job Page 
 - When user clicks on Job page all the jobs are render on UI.
 - Job Filter feature avaiable based on type of employment and salary.
-- Search feature available based on job title keyword.
-- Clear Filter button is avaiable which reset the state into default state.
+- Search feature available  based on job title keyword.
+- Clear Filter button is available  which reset the state into default state.
 
 ##Job Details page.
 - When user click on apply now button in job page card,user will redirected to job details page, which is basically uses id parameter to render the exact data.
